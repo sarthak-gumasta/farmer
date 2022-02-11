@@ -1,0 +1,119 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('  {{url_for("static",filename='assets/img/contactw.jpg')}}  ')">
+	<div class="container position-relative px-4 px-lg-5">
+		<div class="row gx-4 gx-lg-5 justify-content-center">
+			<div class="col-md-10 col-lg-8 col-xl-7">
+				<div class="page-heading">
+					<h1>Contact Me</h1>
+					<span class="subheading">Have questions? I have answers.</span>
+					<div class="py-3">
+						<span>
+							Want to get in touch? Fill out the form below to send me a message
+							and I will get back to you as soon as possible!
+						</span>						
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Main Content -->
+   <div class="container py-1">
+	<div class="row">
+		<div class="col-sm">
+			<img src="https://webtoro.com/wp-content/uploads/2018/10/webtoro-digital-marketing-services.png" class="   img-fluid rounded float-right"  alt="our Logo">
+		</div>
+		<div class="col-sm">
+			<form name="sentMessage" 
+				id="contactForm"
+				novalidate
+				class="needs-validation"
+				method="post"
+				action="/contact"
+				>
+				<div class="control-group m-4 mb-4">
+					<div class="form-group floating-label-form-group controls">
+						<label for="validationCustom01">Name</label>
+						<input
+							type="text"
+							class="form-control"
+							placeholder="Name"
+							id="validationCustom01"
+							name="name"
+							required
+						/>
+						<div class="invalid-feedback">
+		            	Please enter the name. 
+	 				    </div>
+					</div>
+				</div>
+				<div class="control-group m-4 mb-4">
+					<div class="form-group floating-label-form-group controls">
+						<label for="validationCustom02">Email Address</label>
+						<input
+							type="email"
+							class="form-control"
+							placeholder="Email Address"
+							id="validationCustom02"
+							name="email"
+							required
+						/>
+						<div class="invalid-feedback">
+							Please enter your email address. 
+						 </div>
+					</div>
+				</div>
+
+				<div class="control-group  m-4 mb-4">
+					<div
+						class="form-group col-xs-12 floating-label-form-group controls"
+					>
+						<label for="validationCustom03"  >Phone Number</label>
+						<input
+							type="tel"
+							class="form-control"
+							placeholder="Phone Number"
+							name="phone"
+							maxlength="10"
+							id="validationCustom03" 
+							required
+						/>
+						<div class="invalid-feedback">
+							Please enter your phone number. 
+						 </div>
+					</div>
+				</div>
+				<div class="control-group  m-4 mb-4">
+					<div class="form-group floating-label-form-group controls">
+						<label for="validationCustom04" >Message</label>
+						<textarea
+							rows="5"
+							class="form-control"
+							placeholder="Message"
+							name="message"
+							id="validationCustom04"
+							required
+						></textarea>
+						<div class="invalid-feedback">
+							Please enter a message.
+						  </div>
+					</div>
+				</div>
+				<div class="form-group m-4 mb-4">
+					<button
+						type="submit"
+						class="btn btn-primary"
+						id="sendMessageButton"
+					>
+						Send
+					</button>
+				</div>
+			</form>
+		</div>
+		</div>
+		</div>
+{% endblock %}

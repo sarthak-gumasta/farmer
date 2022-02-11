@@ -1,0 +1,138 @@
+{% extends "layout.html" %} {% block body %}
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		background-color: #eee;
+		height: 100vh;
+		font-family: 'Poppins', sans-serif;
+		background: linear-gradient(to top, #fff 10%, rgba(61, 206, 216, 0.4) 90%)
+			no-repeat;
+	}
+
+	.wrapper {
+		max-width: 500px;
+		border-radius: 10px;
+		margin: 50px auto;
+		padding: 30px 40px;
+		box-shadow: 20px 20px 80px rgb(206, 206, 206);
+	}
+
+	.h2 {
+		font-family: 'Kaushan Script', cursive;
+		font-size: 3.5rem;
+		font-weight: bold;
+		color: #0085a1;
+		font-style: italic;
+	}
+
+	.h4 {
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.input-field {
+		border-radius: 5px;
+		padding: 5px;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		border: 1px solid #0085a1;
+		color: #0085a1;
+	}
+
+	.input-field:hover {
+		color: #0085a1;
+		border: 1px solid #0085a1;
+	}
+
+	input {
+		border: none;
+		outline: none;
+		box-shadow: none;
+		width: 100%;
+		padding: 0px 2px;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.fa-eye-slash.btn {
+		border: none;
+		outline: none;
+		box-shadow: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: #212529;
+		font-weight: 700;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: #0085a1;
+	}
+
+	.option {
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+	}
+
+	.option label.text-muted {
+		display: block;
+		cursor: pointer;
+	}
+
+	.option input {
+		display: none;
+	}
+
+	.btn.btn-block {
+		border-radius: 20px;
+		background-color: #0085a1;
+		color: #fff;
+	}
+
+	.btn.btn-block:hover {
+		background-color: #0dcaf0;
+	}
+</style>
+<div class="container py-5 my-5">
+	<div class="wrapper bg-white">
+		<div class="h4 text-muted text-center pt-2">Admin login Page</div>
+		<form class="pt-3" method="post" action="/dashboard">
+			<div class="form-group py-2">
+				<label for="admin">Username</label>
+				<div class="input-field">
+					<input
+						type="text"
+						placeholder="Enter your Username"
+						required
+						class=""
+						name="uname"
+					/>
+				</div>
+			</div>
+			<div class="form-group py-1 pb-2">
+				<label for="password">Password</label>
+				<div class="input-field">
+					<input
+						type="password"
+						placeholder="Enter your Password"
+						required
+						class=""
+						name="pass"
+					/>
+				</div>
+			</div>
+			<div class="d-flex align-items-start"></div>
+			<button class="btn btn-block text-center my-3" type="submit">
+				Log in
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

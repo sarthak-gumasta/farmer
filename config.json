@@ -1,0 +1,17 @@
+{
+    "params":
+    {
+        "local_server": "true",
+        "local_uri":"mysql://root:@localhost/farmer",
+        "prod_uri": "mysql://root:@localhost/farmer",
+        "gmail-user":"meadowthefarmersguide024@gmail.com",
+        "gmail-password":"meadowthefarmersguide",
+        "no_of_post": 1,
+        "admin_user":"sarthak",
+        "admin_password":"sarthak",
+        "upload_location":"C:\\Meadow_The_Farmers's_Guide\\static\\assets\\img",
+        "super_secret_key":"5a11b196cd5789c240a5bc65b23a2450efea7c7e930c820509263ee7405ade2c",
+        "weather_api_key": "9d7cde1f6d07ec55650544be1631307e"
+
+    }
+}

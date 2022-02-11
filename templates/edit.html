@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block body %}
+		<!-- Page Header-->
+		<header
+			class="masthead"
+			style="background-image: url('{{ url_for("static",filename='assets/img/edit.jpg')}}')"
+		>
+			<div class="container position-relative px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-md-10 col-lg-8 col-xl-7">
+						<div class="site-heading">
+							<h1>Add & Edit Post</h1>
+							<span class="subheading"
+								>Meadow-The Farmer's Guide &#x1F69C;</span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+<!-- Main content -->
+        <div class="container ">
+        <div class="col-sm">
+                <h1 class="py-3">Basic Actions</h1>
+                <a href="/dashboard"><button type="button" class="btn btn-primary">Dashboard Home</button></a>
+                <a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+            <hr>
+        <form name="sentMessage" 
+        id="contactForm"
+        action="/edit/{{sno}}"
+        method="post"
+        >
+        <div class="control-group m-4 mb-4">
+            <div class="form-group floating-label-form-group controls">
+                <label for="validationCustom01">Title</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Title"
+                    id="title"
+                    name="title"
+                    value="{{post.title}}"
+                />
+            </div>
+        </div>
+        <div class="control-group m-4 mb-4">
+            <div class="form-group floating-label-form-group controls">
+                <label for="validationCustom02">Sub-Title</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Tagline"
+                    id="tline"
+                    name="tline"
+                    value="{{post.tagline}}"
+                />
+            </div>
+        </div>
+
+        <div class="control-group  m-4 mb-4">
+            <div
+                class="form-group col-xs-12 floating-label-form-group controls"
+            >
+                <label for="validationCustom03"  >Slug</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Slug"
+                    name="slug"
+                    id="slug" 
+                    value="{{post.slug}}"
+                />
+            </div>
+        </div>
+        <div class="control-group  m-4 mb-4" >
+            <div class="form-group floating-label-form-group controls" >
+                <label for="validationCustom04" >Content</label>
+                    <textarea
+                    rows="5"
+                    class="form-control"
+                    placeholder="Content"
+                    id="summernote" 
+                    name="content"
+                >{{post.content}}</textarea>
+ 
+
+            </div>
+        </div>
+        <div class="control-group  m-4 mb-4">
+            <div
+                class="form-group col-xs-12 floating-label-form-group controls"
+            >
+                <label for="validationCustom03"  >Image File</label>
+                <input
+                    class="form-control"
+                    placeholder="Image Filename"
+                    name="img_file"
+                    id="img_file" 
+                    value="{{post.img_file}}"
+                />
+            </div>
+        </div>
+
+
+        <div class="form-group m-4 mb-4">
+            <button
+                type="submit"
+                class="btn btn-primary"
+                id="sendMessageButton"
+            >
+                Post
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+
+<!-- this code for summernote text editor -->
+<script>
+      $('#summernote').summernote({
+        tabsize: 2,
+        height: 350,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['fontsize', ['fontsize']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', [ 'codeview', 'help']]
+        ]
+      });
+
+  </script>
+        {% endblock %}

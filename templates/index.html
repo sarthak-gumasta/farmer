@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block body %}
+
+		<!-- Page Header-->
+		<header
+			class="masthead"
+			style="background-image: url('{{url_for("static",filename='assets/img/home1.jpeg')}}')"
+		>
+			<div class="container position-relative px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-md-10 col-lg-8 col-xl-7">
+						<div class="site-heading">
+							<p class="text-wh mx-auto my-4 fs-1"><strong> The Farmer's Guide</strong></p>
+							<span class="subheading"
+								>Get Informed Decisions About Your Farming Strategy.</span
+							>
+							<div>
+							<p class="text-wh mx-auto my-4 fs-3"><strong> Here are some questions we'll answer</strong></p>
+							<p class="text-li mx-auto mt-2">
+								1. What crop to plant here? <br>
+								2. What fertilizer to use? <br>
+								3. Which disease do your crop have?<br>
+								4. How to cure the disease?</p>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+<!-- Our services code -->
+			<p class=" text-center fs-1 fw-bold text-center py-4 text-decoration-underline">Our<small class="text-muted text-decoration-underline">Services</small></p>
+			<div class="container">
+				<div class="row g-3">
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="card">
+							<img src="{{url_for('static',filename='assets/img/crop.jpg')}}" class="card-img-top" alt="crop">
+							<div class="card-body">
+								<a href="{{url_for('crop_recommend')}}"> <h5 class="card-title">Crop</h5></a>
+								<p class="card-text">Recommendation about the type of crops to be cultivated which is best suited
+									for the respective conditions.</p>
+								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="card">
+							<img src="{{url_for('static',filename='assets/img/fertilizer.jpg')}}" class="card-img-top" alt="London">
+							<div class="card-body">
+								<a href="{{ url_for('fertilizer_recommendation')}}"><h5 class="card-title">Fertilizer</h5></a>
+								<p class="card-text">Recommendation about the type of fertilizer best suited for the particular soil
+									and the recommended crop.</p>
+								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="card">
+							<img src="{{url_for('static',filename='assets/img/cdisease.jpg')}}" class="card-img-top" alt="New York">
+							<div class="card-body">
+							<a href="{{url_for('disease_prediction')}}"><h5 class="card-title">Crop Disease</h5></a>
+								<p class="card-text">Predicting the name and causes of crop disease and suggestions to cure it.</p>
+								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		
+				
+<!-- Main Content of blog-->
+		<p class="text-center fs-1 fw-bold py-1 my-2 text-decoration-underline">Our<small class="text-muted text-decoration-underline">Blog</small></p>
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-md-10 col-lg-8 col-xl-7">
+					<!-- Post preview-->
+
+				{% for post in posts  %}
+
+					<!-- Post preview-->
+					<div class="post-preview">
+                        <a href="/post/{{post.slug}}">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.tagline}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by admin
+                            on {{post.date}}
+                        </p>
+						<p>{{post.content[0:160]|safe}}....</p>
+						<!-- Divider-->
+						<hr class="my-4" />
+                    </div>
+					{% endfor %}
+
+					<!-- Pager-->
+					<div class="d-flex justify-content-between my-4">
+						<a class="btn btn-primary" href="{{prev}}">&laquo;Prev </a>
+						<a class="btn btn-primary" href="{{next}}">Next&raquo;</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+        {%endblock%}
+        
