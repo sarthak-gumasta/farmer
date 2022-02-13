@@ -414,4 +414,5 @@ def disease_prediction():
             pass
     return render_template('disease.html', title=title)
 
-app.run(debug=True)
+# app.run(debug=True)
+app.run()
